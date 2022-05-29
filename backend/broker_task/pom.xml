@@ -14,7 +14,11 @@
 	<name>broker_task</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+<<<<<<< HEAD
 		<java.version>8</java.version>
+=======
+		<java.version>17</java.version>
+>>>>>>> main
 	</properties>
 	<dependencies>
 		<dependency>
