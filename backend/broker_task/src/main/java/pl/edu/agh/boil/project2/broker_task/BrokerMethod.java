@@ -36,13 +36,17 @@ public class BrokerMethod {
 		
 		for(int i = 0; i < providers.length; ++i) {
 			this.providers[i] = providers[i];
+			this.providers[i].setSupplyLeft(this.providers[i].getSupply());
 		}
 		this.providers[providers.length] = fd;
+		this.providers[providers.length].setSupplyLeft(this.providers[providers.length].getSupply());
 		
 		for(int i = 0; i < customers.length; ++i) {
 			this.customers[i] = customers[i];
+			this.customers[i].setDemandLeft(this.customers[i].getDemand());
 		}
 		this.customers[customers.length] = fo;
+		this.customers[customers.length].setDemandLeft(this.customers[customers.length].getDemand());
 		
 		for(int i = 0; i < routes.length; ++i) {
 			for(int j = 0; j < routes[i].length; ++j) {
@@ -58,6 +62,25 @@ public class BrokerMethod {
 	}
 	
 	private void prepare() {
+		
+		for(int i = 0; i < customers.length; ++i) {
+			System.out.print(customers[i].getName()+":"+customers[i].getDemand()+":"+customers[i].getDemandLeft()+":"+customers[i].getSellingPrice()+"\t");
+		}
+		System.out.println();
+		System.out.println();
+		for(int i = 0; i < providers.length; ++i) {
+			System.out.print(providers[i].getName()+":"+providers[i].getSupply()+":"+providers[i].getSupplyLeft()+":"+providers[i].getCostOfPurchase()+"\t");
+		}
+		System.out.println();
+		System.out.println();
+		for(int i = 0; i < routes.length; ++i) {
+			for(int j = 0; j < routes[i].length; ++j) {
+				System.out.print(routes[i][j].getCostOfTransport()+"\t");
+			}
+			System.out.println();
+		}
+		
+		
 		//Obliczenie zysku
 		for(int i = 0; i < (routes.length-1); ++i) {
 			for(int j = 0; j < (routes[i].length-1); ++j) {
