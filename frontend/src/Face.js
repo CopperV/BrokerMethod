@@ -25,6 +25,7 @@ class Face extends React.Component {
 
         this.setCustomer = this.setCustomer.bind(this)
         this.setProvider = this.setProvider.bind(this)
+        this.submit = this.submit.bind(this)
     }
 
     setCustomer(customer) {
@@ -49,12 +50,15 @@ class Face extends React.Component {
 
         console.log(JSON.stringify({ customers: state.customers, providers: state.providers, routes: state.routes }))
 
+        let placeholder = this
+        console.log("placeholder", placeholder)
+
         const request = fetch('http://localhost:8080/broker/calc', requestOptions)
             .then(response => response.json())
             .then(data => {
                 let previous = { ...state }
                 previous.responseRoutes = data.routes
-                this.setState(previous)
+                placeholder.setState(previous)
             })
     }
 
