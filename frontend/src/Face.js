@@ -14,6 +14,7 @@ class Face extends React.Component {
             customers: [new Customer("O1"), new Customer("O2"), new Customer("O3")],
             providers: [new Provider("P1"), new Provider("P2")],
             routes: [[], []],
+            responseRoutes: [],
         }
 
         for (let i = 0; i < 2; i++) {
@@ -50,13 +51,18 @@ class Face extends React.Component {
 
         const request = fetch('http://localhost:8080/broker/calc', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                let previous = { ...state }
+                previous.responseRoutes = data.routes
+                this.setState(previous)
+            })
     }
 
     render() {
         return (
             <div>
                 <TableRoute submit={this.submit} customers={this.state.customers} providers={this.state.providers} routes={this.state.routes} />
+                <TableRoute submit={this.submit} customers={this.state.customers} providers={this.state.providers} routes={this.state.responseRoutes} />
             </div>
         )
         /*return (
