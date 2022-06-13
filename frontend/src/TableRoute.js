@@ -222,6 +222,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 1
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
@@ -233,6 +234,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 2
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
@@ -244,6 +246,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 3
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
@@ -284,6 +287,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 4
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
@@ -295,6 +299,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 5
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
@@ -306,6 +311,7 @@ class TableRoute extends React.Component {
                         </Grid>
                         <Grid item xs={3}  style={gridCell2}>
                             Trasa 6
+                            <br/>
                             <TextField label="Koszt transportu" variant="outlined" 
                                 onChange={(e)=>{
                                     let tmp = {...this.state}
